@@ -164,7 +164,7 @@ public class FilterFragment extends Fragment {
             params.put("filter2", StorageHelper.getStringSharedPref(this.getActivity(), "USING_FILTER"));
             params.put("filter3", StorageHelper.getStringSharedPref(this.getActivity(), "SPECIFICATION_FILTER"));
 
-            MTBRestClient.get("get_productbyfilters.php", params, new JsonHttpResponseHandler() {
+            MTBRestClient.get(FilterFragment.this.getActivity(),"get_productbyfilters.php", params, new JsonHttpResponseHandler() {
 
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
