@@ -1,17 +1,33 @@
 package toyzdudes.mytoyzbook;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import toyzdudes.mytoyzbook.helpers.StorageHelper;
 import toyzdudes.mytoyzbook.workers.FilterPage;
+import toyzdudes.mytoyzbook.workers.MTBRestClient;
+import toyzdudes.mytoyzbook.workers.Toy;
 
 
 public class FilterActivity extends BaseActivity {
@@ -41,6 +57,46 @@ public class FilterActivity extends BaseActivity {
         // VIEW ALL button (skip filters)
         Button viewAllBtn = new Button(this);
         viewAllBtn.setText("VOIR TOUS");
+        viewAllBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO : CALL HTTP THEN INTENT
+//                RequestParams params = new RequestParams();
+//                params.put("filter1", StorageHelper.getStringSharedPref(this.getActivity(), "WHO_FILTER"));
+//                params.put("filter2", StorageHelper.getStringSharedPref(this.getActivity(), "USING_FILTER"));
+//                params.put("filter3", StorageHelper.getStringSharedPref(this.getActivity(), "SPECIFICATION_FILTER"));
+
+                MTBRestClient.get(FilterActivity.this, "get_allproduct.php", null, new JsonHttpResponseHandler() {
+
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+
+                        try {
+
+                            Intent in = new Intent(FilterActivity.this, ResultsActivity.class);
+                            JSONArray products = response.getJSONArray("product");
+                            ArrayList<Toy> toyz = new ArrayList<Toy>();
+
+                            for (int i = 0; i < products.length(); i++) {
+                                toyz.add(new Toy(products.getJSONObject(i)));
+                            }
+
+                            in.putParcelableArrayListExtra(ResultsActivity.RESULT_LIST_EXTRA, toyz);
+                            in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            in.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            //in.putExtra(ResultsActivity.RESULT_LIST_EXTRA, new Toy(response));
+                            startActivity(in);
+                            FilterActivity.this.finish();
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+
+
+            }
+        });
 
         RelativeLayout.LayoutParams buttonParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         buttonParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
