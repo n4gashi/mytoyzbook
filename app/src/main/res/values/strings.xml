@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MyToyzBook</string>
+
+    <string name="action_settings">Paramètres</string>
+    <string name="ac_filter_title">Filtres</string>
+
+    <!-- HTTP ERROR CODES -->
+    <string name="code_unauthorized">Accès refusé</string>
+    <string name="unhandled_exception">Erreur innattendue. Réessayez plus tard.</string>
+    <string name="title_activity_results">ResultsActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+
+</resources>

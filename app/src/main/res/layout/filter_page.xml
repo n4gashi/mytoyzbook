@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView android:id="@+id/filter_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pour quelle utilisation ?"
+        android:layout_above="@+id/filter_group"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:fontFamily=""/>
+
+    <RelativeLayout
+        android:id="@+id/filter_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <RelativeLayout
+            android:id="@+id/first_button_viewgroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/first_button"
+                android:layout_width="@dimen/button_filter_size"
+                android:layout_height="@dimen/button_filter_size"
+                android:layout_marginLeft="@dimen/button_filter_margin"
+                android:layout_marginRight="@dimen/button_filter_margin"
+                android:background="@drawable/ic_filter_anal"/>
+
+            <TextView
+                android:id="@+id/first_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/first_button"
+                android:text="Premier"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="@dimen/button_text_margin_top"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/second_button_viewgroup"
+            android:layout_toRightOf="@id/first_button_viewgroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/second_button"
+                android:layout_width="@dimen/button_filter_size"
+                android:layout_height="@dimen/button_filter_size"
+                android:layout_marginLeft="@dimen/button_filter_margin"
+                android:layout_marginRight="@dimen/button_filter_margin"
+                android:background="@drawable/ic_filter_anal"/>
+
+            <TextView
+                android:id="@+id/second_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/second_button"
+                android:text="Second"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="@dimen/button_text_margin_top"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/third_button_viewgroup"
+            android:layout_toRightOf="@id/second_button_viewgroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/third_button"
+                android:layout_width="@dimen/button_filter_size"
+                android:layout_height="@dimen/button_filter_size"
+                android:layout_marginLeft="@dimen/button_filter_margin"
+                android:layout_marginRight="@dimen/button_filter_margin"
+                android:background="@drawable/ic_filter_anal"/>
+
+            <TextView
+                android:id="@+id/third_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/third_button"
+                android:text="Troisième"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="@dimen/button_text_margin_top"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
