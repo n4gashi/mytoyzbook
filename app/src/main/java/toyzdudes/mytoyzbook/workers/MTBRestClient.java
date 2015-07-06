@@ -5,6 +5,7 @@ import com.loopj.android.http.*;
 public class MTBRestClient {
 
     private static final String BASE_URL = "http://mytoyzbook.alwaysdata.net/webservice/";
+    public static final String BASE_IMG_URL = "http://mytoyzbook.alwaysdata.net/img/";
     private static AsyncHttpClient client = new AsyncHttpClient();
 
     public static void get(String url, RequestParams params, AsyncHttpResponseHandler responseHandler)

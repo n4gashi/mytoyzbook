@@ -1,5 +1,6 @@
 package toyzdudes.mytoyzbook;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,6 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import toyzdudes.mytoyzbook.workers.Toy;
@@ -30,15 +32,9 @@ public class ResultsActivity extends ActionBarActivity implements AdapterView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
+        ArrayList<Toy> toyzList = getIntent().getExtras().getParcelableArrayList(RESULT_LIST_EXTRA);
+
         this.mToyzListView = (ListView)findViewById(R.id.resultList);
-        ArrayList<Toy> toyzList = new ArrayList<>();
-        try {
-            toyzList.add(new Toy(new JSONObject("{ \"id\":1, \"titre\":\"Toyz1\" }")));
-            toyzList.add(new Toy(new JSONObject("{ \"id\":2, \"titre\":\"Toyz2\", image:\"http://mytoyzbook.alwaysdata.net/img/810.jpg\" }")));
-            toyzList.add(new Toy(new JSONObject("{ \"id\":3, \"titre\":\"Toyz3\" }}")));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
         ToyzAdapter adapter = new ToyzAdapter(this, toyzList);
         this.mToyzListView.setAdapter(adapter);
         this.mToyzListView.setOnItemClickListener(this);
@@ -59,8 +55,11 @@ public class ResultsActivity extends ActionBarActivity implements AdapterView.On
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_filter) {
+            Intent mainIntent = new Intent(ResultsActivity.this, FilterActivity.class);
+            ResultsActivity.this.startActivity(mainIntent);
+            mainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            mainIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         }
 
         return super.onOptionsItemSelected(item);
