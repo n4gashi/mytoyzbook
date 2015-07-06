@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">MyToyzBook</string>
 
-    <string name="action_settings">Paramètres</string>
-    <string name="ac_filter_title">Filtres</string>
+    <string name="ac_filter_title">Retour aux filtres</string>
 
     <!-- HTTP ERROR CODES -->
     <string name="code_unauthorized">Accès refusé</string>

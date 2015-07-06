@@ -11,6 +11,7 @@ import com.loopj.android.image.SmartImageView;
 
 import java.util.ArrayList;
 
+import toyzdudes.mytoyzbook.workers.MTBRestClient;
 import toyzdudes.mytoyzbook.workers.Toy;
 
 public class ToyzAdapter extends ArrayAdapter<Toy> {
@@ -49,7 +50,7 @@ public class ToyzAdapter extends ArrayAdapter<Toy> {
         // Populate the data into the template view using the data object
         //viewHolder.image.setImageDrawable();
         if(toy.getImageURI() != null)
-            viewHolder.image.setImageUrl(toy.getImageURI());
+            viewHolder.image.setImageUrl(MTBRestClient.BASE_IMG_URL + toy.getImageURI());
 
         viewHolder.label.setText(toy.getTitre());
 

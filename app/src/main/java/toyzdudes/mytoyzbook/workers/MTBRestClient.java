@@ -11,6 +11,7 @@ import toyzdudes.mytoyzbook.helpers.FeaturesHelper;
 public class MTBRestClient {
 
     private static final String BASE_URL = "http://mytoyzbook.alwaysdata.net/webservice/";
+    public static final String BASE_IMG_URL = "http://mytoyzbook.alwaysdata.net/img/";
     private static AsyncHttpClient client = new AsyncHttpClient();
 
     public static void get(Context context, String url, RequestParams params, AsyncHttpResponseHandler responseHandler)

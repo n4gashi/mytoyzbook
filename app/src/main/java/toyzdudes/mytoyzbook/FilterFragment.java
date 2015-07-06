@@ -173,14 +173,18 @@ public class FilterFragment extends Fragment {
 
                         Intent in = new Intent(FilterFragment.this.getActivity(), ResultsActivity.class);
                         JSONArray products = response.getJSONArray("product");
-                        Toy[] toyz = new Toy[products.length()+1];
+                        ArrayList<Toy> toyz = new ArrayList<Toy>();
 
                         for (int i = 0; i < products.length(); i++) {
-                            toyz[i] = new Toy(products.getJSONObject(i));
+                            toyz.add(new Toy(products.getJSONObject(i)));
                         }
 
-                        in.putExtra(ResultsActivity.RESULT_LIST_EXTRA, toyz);
+                        in.putParcelableArrayListExtra(ResultsActivity.RESULT_LIST_EXTRA, toyz);
+                        in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        in.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        //in.putExtra(ResultsActivity.RESULT_LIST_EXTRA, new Toy(response));
                         startActivity(in);
+                        getActivity().finish();
 
                     } catch (JSONException e) {
                         e.printStackTrace();
