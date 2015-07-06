@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey">
+
+    <RelativeLayout
+        android:id="@+id/rootRLMain"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        >
+
+        <LinearLayout
+            android:id="@+id/rootRL1"
+            android:orientation="horizontal"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            >
+            <ImageView
+                android:id="@+id/imgProd"
+                android:background="@drawable/ic_aze"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="55"
+                />
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight="45"
+                    android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/name"
+                    android:text="Attari G-Touch"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/mainColor"
+                    android:background="@color/white"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal"
+                    android:background="@color/white"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgCarac1"
+                        android:background="@drawable/ic_test"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <ImageView
+                        android:id="@+id/imgCarac2"
+                        android:layout_toRightOf="@+id/imgCarac1"
+                        android:background="@drawable/ic_test"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <ImageView
+                        android:id="@+id/imgCarac3"
+                        android:background="@drawable/ic_test"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:orientation="horizontal"
+                        android:background="@color/white"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imgCarac4"
+                            android:background="@drawable/ic_test"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="30dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            />
+                        <ImageView
+                            android:id="@+id/imgCarac5"
+                            android:layout_toRightOf="@+id/imgCarac1"
+                            android:background="@drawable/ic_test"
+                            android:layout_marginRight="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            />
+                        <ImageView
+                            android:id="@+id/imgCarac6"
+                            android:background="@drawable/ic_test"
+                            android:layout_marginRight="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rootRL2"
+            android:layout_below="@id/rootRL1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            >
+            <TextView
+                android:id="@+id/desTitle"
+                android:background="@color/grey"
+                android:text="DESCRIPTION"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                />
+            <TextView
+                android:id="@+id/desText"
+                android:background="@color/grey"
+                android:layout_width="match_parent"
+                android:layout_below="@id/desTitle"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="20dp"
+                android:text="Le Vibromasseur G-Touch cible directement le point G pour vous mener à l'orgasme !
+
+                Le Vibromasseur G-Touch dispose de 10 modes de vibrations
+                Attention, il supporte l’eau mais n’est pas utilisable en immersion donc pas sous la douche ni dans le bain.
+
+                Son corps en silicone est flexible et son extrémité est conçue avec précision pour stimuler directement votre point G.
+
+                Votre Vibromasseur G-Touch est fabriqué en silicone 100 % hypoallergénique très hygiénique.Le Vibromasseur G-Touch cible directement le point G pour vous mener à l'orgasme !
+
+                Le Vibromasseur G-Touch dispose de 10 modes de vibrations
+                Attention, il supporte l’eau mais n’est pas utilisable en immersion donc pas sous la douche ni dans le bain.
+
+                Son corps en silicone est flexible et son extrémité est conçue avec précision pour stimuler directement votre point G.
+
+                Votre Vibromasseur G-Touch est fabriqué en silicone 100 % hypoallergénique très hygiénique.Le Vibromasseur G-Touch cible directement le point G pour vous mener à l'orgasme !
+
+                Le Vibromasseur G-Touch dispose de 10 modes de vibrations
+                Attention, il supporte l’eau mais n’est pas utilisable en immersion donc pas sous la douche ni dans le bain.
+
+                Son corps en silicone est flexible et son extrémité est conçue avec précision pour stimuler directement votre point G.
+
+                Votre Vibromasseur G-Touch est fabriqué en silicone 100 % hypoallergénique très hygiénique."
+                />
+            <TextView
+                android:text="CARACTERISTIQUES"
+                android:background="@color/grey"
+                android:textStyle="bold"
+                android:id="@+id/caracTitle"
+                android:layout_width="match_parent"
+                android:textColor="@color/mainColor"
+                android:paddingBottom="20dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_below="@id/desText"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="Fonctionne avec 2 piles AA (non fournies)
+                                G-Spot vibrator
+                                10 modes de vibrations
+                                100% silicone
+                                Cible directement le point G
+                                Dimensions 23 x 3,8 cm "
+                android:id="@+id/caracText"
+                android:background="@color/grey"
+                android:layout_width="match_parent"
+                android:layout_below="@id/caracTitle"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="20dp"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
